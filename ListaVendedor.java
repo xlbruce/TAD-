@@ -67,6 +67,18 @@ public class ListaVendedor {
         }
         return v;
     }
+    
+    void ordena() {
+        int j;
+        Vendedor aux;
+        for (int i = 1; i < this.qtde; i++) {
+            aux = lista[i];
+            for (j = i - 1; j >= 0 && aux.getNome().compareTo(lista[j].getNome()) < 0; j--) {
+                lista[j + 1] = lista[j];
+            }
+        lista[j + 1] = aux;
+        }
+    }
 
     Vendedor menorVenda() {
         Vendedor v = null;
